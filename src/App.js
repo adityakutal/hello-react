@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-  function countNumber() {
-    setCount(count + 1)
+  const [name, setName] = useState("Hello World!")
+  function changeMessage() {
+    setName("Good Morning")
   }
   return (
     <div>
-      <h1>{count}</h1>
-      <button onClick={countNumber}>Count Number</button>
+      <h1>{name}</h1>
+      <button onClick={changeMessage}>Change Message</button>
     </div>
   )
 }
