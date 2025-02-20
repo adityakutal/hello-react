@@ -1,23 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [number, setNumber] = useState("")
-  function checkevenorodd() {
-    if(Number(number) % 2==0)
-    {
-      setNumber(number + " is even")
-    }
-    else{
-      setNumber(number + " is odd")
-
-    }
+  const [input, setInput] = useState("")
+  function onInputChange(event) {
+    setInput(event.target.value)
   }
+  useEffect(() => {
+    console.log('input: ', input);
+
+  }, [input])
+
+
+
   return (
     <div>
-      <input type="text" onChange={(e)=>{setNumber(e.target.value)}}/>
-      <button onClick={checkevenorodd}>Change the number even or odd</button>
+      <input type="text" onChange={onInputChange} />
       <div>
-        {number}
       </div>
     </div>
   )
